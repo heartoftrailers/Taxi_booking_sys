@@ -1,7 +1,7 @@
 # taxi_booking_system
 
 ## Installation
-cd 
+
 virtualenv venv 
 # or this instead: python -m virtualenv venv
 source ./venv/bin/activate
