@@ -1,0 +1,21 @@
+{% extends 'trips/base.html' %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-3">Track your Trips!</h1>
+    <p>It is free and it always will be for free.</p>
+</div>
+{% for trip in trips_list %}
+   
+    <div class="card w-50">
+    <div class="card-body">
+        <h5><center><b><span style="color:black;">Trip information: </b><center></h5>
+        <p> <b><span style="color:black;">FROM:</b> {{trip.pick_up_place}}</p>
+        <p> <b><span style="color:black;"> AT: </b>   {{trip.pick_up_time}}</p>
+        <p> <b><span style="color:black;">GOING TO: </b>   {{trip.drop_off_place}}</p>
+        <p> <b><span style="color:black;">Taxi Driver Information:</b> {{trip.driver.first_name}}, {{trip.driver.car_color}} {{trip.driver.car_model}}, {{trip.driver.car_license_plate}} </p>
+        <a href="{% url 'trips:delete-trip' id=trip.id %}" class="btn btn-danger">Delete</a>
+    </div>
+    </div>
+    
+{% endfor %}
+{% endblock  %}

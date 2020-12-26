@@ -1,0 +1,20 @@
+{% extends 'trips/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div id="results">
+
+  <div class="container-fluid">
+      <form method="post" action="{% url 'trips:book' %}" class="form">
+          {% csrf_token %}
+          {{ form|crispy }} 
+          <button name="submit" class="btn btn-primary">Submit</button>
+          <input type="hidden" name="next" value="" />
+          
+      </form>
+      
+  </div>
+</div>
+
+        
+{% endblock  %}

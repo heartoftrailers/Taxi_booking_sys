@@ -1,0 +1,14 @@
+
+{% extends "trips/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<form method="post" action="{% url 'users:register'%}">
+        {% csrf_token %}
+        {{ form|crispy }} 
+        <button name="submit" class="btn btn-primary">Register</button>
+        <input type="hidden">
+    </form>
+
+{% endblock content %}
